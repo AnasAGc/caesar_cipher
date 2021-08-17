@@ -5,7 +5,7 @@ def encrypt(plain, key):
     plain = re.sub(r'[^A-Za-z]+','_', plain)
     encrypted_text = ""
     for char in plain:
-        
+
         if char =="_":
             encrypted_text += " "
             continue
@@ -34,11 +34,10 @@ def crack(text):
         percentage = int(count / len(text.split()) * 100)
         if percentage > 50:
             result= (to_check, i)
+             
     
     if result:
-        return f"after decode the message will be {result[0]} and the key was {result[1]}"
-    else:
-        return "orginal message doesn't has meaningfull words"
+      return result
 
     
 
@@ -50,7 +49,8 @@ if __name__ == "__main__":
     ]
 
     
-    x=encrypt("Good you did it  ",25)
-    y=crack(x)
-    print(f"the encription message was {x}") 
-    print(y)
+    x=encrypt("Good man",8)
+    # y=crack(x)
+    # print(f"the encrypted  message was {x}") 
+    print(x)
+    # print(y)
